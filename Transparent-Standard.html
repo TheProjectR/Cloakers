@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: black;
+    font-family: 'Raleway', sans-serif;
+}
+
+button{
+  position: fixed;
+  padding: 30px 35px;
+  font-size: 25px;
+  background-color: black;
+  color: #03e9f4;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  letter-spacing: 4px;
+  overflow: hidden;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+button:hover{
+    background: #03e9f4;
+    color: black;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+}
+
+h1 {
+
+    position: fixed;
+    font-size: 100px;
+    font-weight: bold;
+    bottom: 90%;
+    top: 10%;
+    color: white;
+}
+
+</style>  
+<title>My Apps</title>   
+<link rel="shortcut icon" type="image/jpg" href="https://myapps.classlink.com/favicon.ico">                                          
+<body>
+
+<h1>By Project R</h1>
+
+<button onclick="openGame()">Open Cloaked Page</button>
+    <script>
+        var url;
+        let huh = prompt("Enter URL DO NOT Have https:// \n(If a website has www in it add www. to the start url)");
+            url = "https://" + huh;
+        if (url) {
+            var win;
+            var webReplace = 'https://www.google.com';
+
+            document.querySelector('button').onclick = function() {
+                if (win) {
+                    win.focus();
+                } else {
+                    win = window.open();
+                    win.document.title = "My Apps"
+                    win.document.body.style.margin = '0';
+                    win.document.body.style.height = '100vh';
+                    var iframe = win.document.createElement('iframe');
+                    iframe.style.border = 'none';
+                    iframe.style.width = '100%';
+                    iframe.style.height = '100%';
+                    iframe.style.margin = '0';
+                    iframe.src = url;
+                    win.document.body.appendChild(iframe);
+                    window.location.replace(webReplace);
+                }
+            };
+        }
+    </script>
+</body>
+</html>
